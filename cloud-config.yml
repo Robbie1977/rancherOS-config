@@ -3,11 +3,11 @@ ssh_authorized_keys:
   - ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAmrpw2yDG58e1DTmG1y+9sFBgeFzRun1IWQ40PSc97/q+03ehErTEcuNoNr5EedPC84igc4ApwE4qLPttMdWlbnfVxlq5fGkIwGctyrcaJ1L3kzN6cvodfLKxMZGhBDvZ20HEmmYOi6XGIFLS0G5WnORP6Ps3C/GNYc7ozJ/w/fc1BiJml2QK/8R3eWDcGT0gosihRz53cdLvjUFzTkRUz2LXbYpf6/n0xP15ue7Dk4BfHDK9G8J6sJ4vqnH7ku3Bv2hBVlExfV7RZnKqbuQS+pL4SSDAPNmPmwzn119lTdvlYALEyMPPycHj/98/MMkNKc2XU9f3GDjjd1Ivzxkw3w== s1002628@karenin.inf.ed.ac.uk
   - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDMV5nK2/OaL+RKHduqjBwcHSmFbdpCTbrao1AZPE73pHh49hwH9orFEroCedX7jbQPM9YtdMSUe+qfHwdBgKCLoY85BzgL4/NnHYUqYaeIVRTWKddqgt7FKOg+8p8Ua6mAM9lOX5EOU1PSqxOrJCIrgfQUubGft/aF38fUVzyTLOz2qCqZ7rrTWF50JvyNlhkrJjwOqdhy70SAxttsrxWI0KcZfhbIyxrexx1YrRcHryVNHYjcb8Kx3XLswAIfeUBYfgoYMlqrtY49rm9nxfMpIymSBHcQY1iM5tPWxJ40k7IWf9f6Jl5DCG3qQjh9otaRnOtAqRJ/EaY7BT6e2/6z jenkins@jenkins-ci-jenkins-primary-1
 rancher:
-    services:
-        rancher-agent1:
-        image: rancher/agent:v1.2.2
-        command: http://eccles.inf.ed.ac.uk:9080/v1/scripts/C57982307938292DDAC8:1483142400000:XRAZEpepSKtldMdj99ViKD4GUP4
-        privileged: true
-        volumes:
-            - /var/run/docker.sock:/var/run/docker.sock
-            - /var/lib/rancher:/var/lib/rancher
+  services:
+    rancher-agent1:
+      image: rancher/agent:stable
+      command: http://eccles.inf.ed.ac.uk:9080/v1/scripts/C57982307938292DDAC8:1483142400000:XRAZEpepSKtldMdj99ViKD4GUP4
+      privileged: true
+      volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
+        - /var/lib/rancher:/var/lib/rancher
