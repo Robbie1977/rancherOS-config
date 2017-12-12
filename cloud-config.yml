@@ -1,0 +1,13 @@
+#cloud-config
+ssh_authorized_keys:
+  - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDbiOIlteaGdp50Pc7/lEC/ILuR/jv9jyiD6slRkexWlHTtDp36ovCpisNK9F+3x4ESIfsPtwAxcXVvrP5fcW/ReMYqiLCYf+RQxF7zV3AJrfZFY77joT5zCA6FDeeIQpH3+LOOSNcbjVnUewx9HAyUMSO4DL59I+tY1PtIAVC6ZYSTm7/NubsozTxelAduR+tByxpZaBv4yD9d+OpBCGknEnyMGCiMhiG00cSMdvndAv7pzhY4i3IAR7WAv9AhqwbFhETGapzUZTbUqQTIC4yXXyiBEhA0Rty9pndtar7+WHpgsJuc31MY29ncbrcLFidvoL3qtIg3WZITnATwbLMX robertcourt@roberts-mbp.config
+  - ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAmrpw2yDG58e1DTmG1y+9sFBgeFzRun1IWQ40PSc97/q+03ehErTEcuNoNr5EedPC84igc4ApwE4qLPttMdWlbnfVxlq5fGkIwGctyrcaJ1L3kzN6cvodfLKxMZGhBDvZ20HEmmYOi6XGIFLS0G5WnORP6Ps3C/GNYc7ozJ/w/fc1BiJml2QK/8R3eWDcGT0gosihRz53cdLvjUFzTkRUz2LXbYpf6/n0xP15ue7Dk4BfHDK9G8J6sJ4vqnH7ku3Bv2hBVlExfV7RZnKqbuQS+pL4SSDAPNmPmwzn119lTdvlYALEyMPPycHj/98/MMkNKc2XU9f3GDjjd1Ivzxkw3w== s1002628@karenin.inf.ed.ac.uk
+services:
+    rancher-agent1:
+      image: rancher/agent:v1.2.1
+      command: http://eccles.inf.ed.ac.uk:9080/v1/scripts/C57982307938292DDAC8:1483142400000:XRAZEpepSKtldMdj99ViKD4GUP4
+      privileged: true
+      volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
+        - /var/lib/rancher:/var/lib/rancher
+        
